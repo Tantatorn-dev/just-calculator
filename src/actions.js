@@ -1,32 +1,15 @@
 export const INPUT = 'INPUT';
-
-export const ADD = 'ADD';
-export const SUBTRACT = 'SUBTRACT';
-export const MULTIPLY = 'MULTIPLY';
-export const DIVIDE = 'DIVIDE';
-
 export const COMPUTE = 'COMPUTE';
+export const CLEAR = 'CLEAR';
 
 export function input(text){
     return {type:INPUT,text};
 }
 
-export function  add(number){
-    return {type:ADD,number}
+export function  compute(){
+    return {type:COMPUTE};
 }
 
-export function  subtract(number){
-    return {type:SUBTRACT,number}
-}
-
-export function  multiply(number){
-    return {type:MULTIPLY,number}
-}
-
-export function  divide(number){
-    return {type:DIVIDE,number}
-}
-
-export function  compute(number){
-    return {type:COMPUTE,number}
+export function clear() {
+    return {type:CLEAR};
 }

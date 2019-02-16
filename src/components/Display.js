@@ -3,10 +3,12 @@ import '../App.css';
 import { Grid } from "@material-ui/core";
 import { Paper } from "@material-ui/core";
 
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 
-const mapStateToProps = (state)=>{
-    return {displayText:state.displayText}
+const mapStateToProps = (state) => {
+    return {
+        displayText: state.displayText
+    }
 }
 
 
@@ -18,7 +20,7 @@ class ConnectedDisplay extends Component {
                     <Grid xs={4} />
                     <Grid item xs={4}>
                         <Paper id="display" square={true}>
-                            {this.props.displayText}
+                            <h1>{this.props.displayText}</h1>
                         </Paper>
                     </Grid>
                     <Grid xs={4} />
@@ -28,6 +30,6 @@ class ConnectedDisplay extends Component {
     }
 }
 
-const Display= connect(mapStateToProps)(ConnectedDisplay)
+const Display = connect(mapStateToProps)(ConnectedDisplay)
 
 export default Display;

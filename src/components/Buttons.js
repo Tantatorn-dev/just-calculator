@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import '../App.css';
 import { Grid, Button } from '@material-ui/core';
 import { connect } from 'react-redux';
-import { input } from '../actions'
+import { input , compute , clear } from '../actions'
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        input: text => dispatch(input(text))
+        input: text => dispatch(input(text)),
+        compute: () => dispatch(compute()),
+        clear: () =>dispatch(clear())
     }
 }
 
@@ -30,7 +32,7 @@ class ConnectedButtons extends Component {
                         <Button variant="fab" color="primary" onClick={() => updateDisplay('3')}>3</Button>
                     </Grid>
                     <Grid item xs={1}>
-                        <Button variant="fab" color="primary">X</Button>
+                        <Button variant="fab" color="primary" onClick={() => updateDisplay('*')}>*</Button>
                     </Grid>
                     <Grid xs={4} />
                 </Grid>
@@ -47,7 +49,7 @@ class ConnectedButtons extends Component {
                         <Button variant="fab" color="primary" onClick={() => updateDisplay('6')}>6</Button>
                     </Grid>
                     <Grid item xs={1}>
-                        <Button variant="fab" color="primary">/</Button>
+                        <Button variant="fab" color="primary" onClick={() => updateDisplay('/')}>/</Button>
                     </Grid>
                     <Grid xs={4} />
                 </Grid>
@@ -64,7 +66,7 @@ class ConnectedButtons extends Component {
                         <Button variant="fab" color="primary" onClick={() => updateDisplay('9')}>9</Button>
                     </Grid>
                     <Grid item xs={1}>
-                        <Button variant="fab" color="primary">-</Button>
+                        <Button variant="fab" color="primary" onClick={() => updateDisplay('-')}>-</Button>
                     </Grid>
                     <Grid xs={4} />
                 </Grid>
@@ -75,13 +77,13 @@ class ConnectedButtons extends Component {
                         <Button variant="fab" color="primary" onClick={() => updateDisplay('0')}>0</Button>
                     </Grid>
                     <Grid item xs={1}>
-                        <Button variant="fab" color="primary">AC</Button>
+                        <Button variant="fab" color="primary" onClick={()=>{this.props.clear()}}>AC</Button>
                     </Grid>
                     <Grid item xs={1}>
-                        <Button variant="fab" color="primary">+</Button>
+                        <Button variant="fab" color="primary" onClick={() => updateDisplay('+')}>+</Button>
                     </Grid>
                     <Grid item xs={1}>
-                        <Button variant="fab" color="primary">=</Button>
+                        <Button variant="fab" color="primary" onClick={() => {this.props.compute()}}>=</Button>
                     </Grid>
                     <Grid xs={4} />
                 </Grid>

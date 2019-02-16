@@ -1,6 +1,10 @@
 #display{
     background: 	#f5f1e6;
-    height: 60px;
+    height: 70px;
     margin-top: 30px;
     font-size:28px;
+}
+
+h1{
+    text-align: right;
 }
