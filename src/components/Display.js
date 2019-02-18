@@ -17,13 +17,13 @@ class ConnectedDisplay extends Component {
         return (
             <div className="Display">
                 <Grid container spacing={0}>
-                    <Grid xs={4} />
-                    <Grid item xs={4}>
+                    <Grid xs={1} />
+                    <Grid item xs={10}>
                         <Paper id="display" square={true}>
                             <h1>{this.props.displayText}</h1>
                         </Paper>
                     </Grid>
-                    <Grid xs={4} />
+                    <Grid xs={1} />
                 </Grid>
             </div>
         );

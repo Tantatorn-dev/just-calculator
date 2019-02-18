@@ -3,8 +3,16 @@
     height: 70px;
     margin-top: 30px;
     font-size:28px;
+    font-family: 'Roboto',sans-serif;
 }
 
 h1{
     text-align: right;
 }
+
+#my-calculator{
+    background: rosybrown;
+    width: 600px;
+    padding: 20px;
+  }
+  
